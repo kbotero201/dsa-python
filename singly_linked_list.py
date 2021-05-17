@@ -21,10 +21,10 @@ class SLinkedList:
     
     #O(n) time complexity & O(1) space complexity 
     def search(self, value):
-        if self.head == None:
+        if self.head == None: 
             return None
         current = self.head
-        while current is not None
+        while current is not None:
             if value == current.value:
                 return current
             else: 
@@ -43,6 +43,21 @@ class SLinkedList:
             else: 
                 current = current.next 
                 counter += 1
-        return None 
+        return None
+
+    #O(n) time complexity & O(1) space complexity 
+    def set(self, index, value):
+        if index < 0 or self.head == None:
+            return None
+        current = self.head
+        counter = 0
+        while current is not None:
+            if index == counter:
+                current.value = value
+                return True
+            else: 
+                current = current.next 
+                counter += 1
+        return False 
             
     

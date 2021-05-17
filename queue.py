@@ -22,8 +22,8 @@ class Queue:
             return "Empty"
         removedNode = self.head 
         if self.head == self.tail:
-            this.head = None 
-            this.tail = None 
+            self.head = None 
+            self.tail = None 
         else: 
             self.head = self.head.next 
         return removedNode

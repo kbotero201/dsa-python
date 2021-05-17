@@ -30,7 +30,7 @@ class Stack:
         return remNode 
 
     def peek(self):
-        if self.head == None 
+        if self.head == None: 
             return None
         else: 
             return self.head

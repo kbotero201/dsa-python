@@ -184,6 +184,35 @@ class SLinkedList:
         return pointer1
         
 
+# Partition a linked list around a value x, such that all nodes less than x come before all nodes greater than x. 
+
+# O(n) time complexity & o(1) space complexity 
+    def partition(self, x):
+        current = self.head 
+        self.tail = self.head 
+
+        while current:
+            nextNode = current.next 
+            current.next = None 
+            if current.value < x:
+                current.next = self.head 
+                self.head = current
+            else: 
+                self.tail.next = current 
+                self.tail = current
+            current = nextNode 
+
+        if self.tail.next is not None:
+            self.tail.next = None  
+
+
+# You have two numbers represented by a linked list, where each node contains a single digit. 
+# The digits are stored in reverse order, such that the 1's digit is at the head of the list.
+# Write a function that adds the two numbers and returns the sum as a linked list. 
+
+  
+
+
 
 
 

@@ -115,16 +115,15 @@ class SLinkedList:
                     self.tail = current
             else: 
                 current = self.head
-                nextNode = current.next
                 counter = 0
                 while current is not None:
-                    if index == counter -1:
+                    if counter == index -1:
+                        nextNode = current.next
                         current.next = nextNode.next
-                        return "Deleted"
+                        return 
                     current = current.next
                     counter += 1
-                return "Index not found"
-
+                return print("Index not found")
                 
 
 # SLL Challenges -------------------------------

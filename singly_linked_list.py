@@ -77,17 +77,17 @@ class SLinkedList:
                 self.tail = newNode
             else: 
                 current = self.head
-                nextNode = current.next
                 counter = 0
                 while current is not None:
-                    if index == counter -1:
+                    if counter == index -1: 
+                        nextNode = current.next
                         current.next = newNode 
                         newNode.next = nextNode
-                        return "Inserted"
+                        return 
                     else: 
                         current = current.next 
                         counter += 1
-                return "Index not found"
+                return print("Index not found")
 
 
     #O(n) time complexity & O(1) space complexity 
@@ -210,14 +210,3 @@ class SLinkedList:
 # The digits are stored in reverse order, such that the 1's digit is at the head of the list.
 # Write a function that adds the two numbers and returns the sum as a linked list. 
 
-  
-
-
-
-
-
-
-
-
-
-    

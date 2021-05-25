@@ -210,30 +210,67 @@ class SLinkedList:
 # Write a function that adds the two numbers and returns the sum as a linked list. 
 
 # O(n) time complexity & o(1) space complexity 
-    def sumLists(llA, llB):
-        nodeA = llA.head
-        nodeB = llB.head 
-        carry = 0 
-        ll = SLinkedList()
 
-        while nodeA or nodeB:
-            result = carry
-            if nodeA:
-                result += nodeA.value
-                nodeA = nodeA.next 
-            if nodeB:
-                result += nodeB.value 
-                nodeB = nodeB.next 
-            ll.add(int(result) % 10)
-            carry = result / 10
+    class LinkedList:
+        def __init__(self):
+            self.head = None
+            self.tail = None
         
-        if carry > 1:
-            ll.add(int(carry) % 10)
+        def __iter__(self):
+            current = self.head 
+            while current: 
+                yield current 
+                current = current.next 
+        
+        def __str__(self):
+            values = [str(x.value) for x in self]
+            return "->".join(values)
+        
+        def add(self, val):
+            newNode = Node(val)
+            if self.head == None:
+                self.head = newNode
+                self.tail = newNode 
+            else:
+                self.tail.next = newNode 
+                self.tail = newNode
 
-        return ll 
+# start solution: (CLASS NEEDS AN "ADD" FUNCTION FOR THIS TO WORK)
+                
+        def sumLists(llA, llB):
+            nodeA = llA.head
+            nodeB = llB.head 
+            carry = 0 
+            ll = SLinkedList()
+
+            while nodeA or nodeB:
+                result = carry
+                if nodeA:
+                    result += nodeA.value
+                    nodeA = nodeA.next 
+                if nodeB:
+                    result += nodeB.value 
+                    nodeB = nodeB.next 
+                ll.add(int(result) % 10)
+                carry = result / 10
+            
+            if carry > 1:
+                ll.add(int(carry) % 10)
+
+            return ll 
 
 
+# Reverse Linked List Iteratively
 
+# O(n) time complexity & o(1) space complexity 
+    def reverseList(self, head):
+        prev = None
+        curr = head
 
-
-
+        while curr:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        
+        return prev

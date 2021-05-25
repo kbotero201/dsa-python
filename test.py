@@ -53,15 +53,18 @@ def sumList(llA, llB):
     return ll
 
 llA = LinkedList()
-llA.add(7)
+llA.add(1)
 llA.add(1)
 llA.add(7)
 
 
 llB = LinkedList()
-llB.add(5)
-llB.add(9)
+llB.add(1)
+llB.add(1)
 llB.add(9)
 print(llA)
 print(llB)
 print(sumList(llA, llB))
+
+
+

@@ -1,4 +1,8 @@
 
+# LIFO Method
+# O(1) time complexity & O(1) space complexity 
+
+
 class Node:
     def __init__(self, value):
         self.value = value 

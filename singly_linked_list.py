@@ -168,7 +168,7 @@ class SLinkedList:
 # Return Nth to last:
 
 # O(n) time complexity & o(1) space complexity 
-    def  nthToLast(self, n):
+    def nthToLast(self, n):
         pointer1 = self.head
         pointer2 = self.head 
 
@@ -273,4 +273,4 @@ class SLinkedList:
             prev = curr
             curr = next
         
-        return prev
+        return prev # return the new head reference 

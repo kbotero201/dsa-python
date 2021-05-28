@@ -55,7 +55,6 @@ def insertNode(rootNode, value):
 
 # Search In Binary Search Tree -----------
 
-
 # Iterative Solution (JS)
 # O(log n) time complexity & O(log n) space complexity 
 def search(rootNode, value):
@@ -73,7 +72,7 @@ def search(rootNode, value):
             if current.right.value == value:
                 return "Found"
             current = current.right
-        return "Value not found"
+    return "Value not found"
 
 
 # Recursive solution
@@ -102,7 +101,6 @@ def search(rootNode, value):
 # Leaf node: set the parent's child (right/left) to NULL.
 # Has one child: Just set the child of the node to be deleted to its parent's child.
 # Has two children: Basically have to re-order the whole subtree here by pruning the subtree to by finding new children for the node to be deleted.
-
 
 # Recursive Solution
 # O(log n) time complexity & O(log n) space complexity 

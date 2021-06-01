@@ -48,3 +48,15 @@ def heapifyTreeInsert(rootNode, index, heapType): #heapType: Min or Max
             rootNode.index[parentIndex] = temp 
             heapifyTreeInsert(rootNode, parentIndex, heapType)
 
+# O(log n) time complexity & O(log n) space complexity 
+def insertNode(rootNode, value, heapType):
+    if rootNode.heapSize + 1 == rootNode.maxSize:
+        return "The Binary Heap is Full"
+    rootNode.list[rootNode.heapSize + 1] = value
+    rootNode.heapSize += 1
+    heapifyTreeInsert(rootNode, rootNode.heapSize, heapType)
+    return "Value Inserted"
+
+
+# Extract Node from Binary Heap ---------------
+# O(log n) time complexity & O(log n) space complexity 

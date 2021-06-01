@@ -69,7 +69,7 @@ def search(rootNode, value):
                 return "Found"
             current = current.left
         else:
-            if current.right.value == value:
+            i current.right.value == value:
                 return "Found"
             current = current.right
     return "Value not found"

@@ -30,6 +30,21 @@ def levelOrderTraversal(rootNode):
 
 
 # Insert in Binary Heap ---------------
-
-
+# O(log n) time complexity & O(log n) space complexity 
+def heapifyTreeInsert(rootNode, index, heapType): #heapType: Min or Max 
+    parentIndex = int(index/2)
+    if index <= 1:
+        return 
+    if heapType == "Min":
+        if rootNode.list[index] < rootNode.index[parentIndex]:
+            temp = rootNode.list[index]
+            rootNode.list[index] = rootNode.index[parentIndex]
+            rootNode.index[parentIndex] = temp 
+            heapifyTreeInsert(rootNode, parentIndex, heapType)
+    elif heapType == "Max":
+        if rootNode.list[index] > rootNode.list[parentIndex]:
+            temp = rootNode.list[index]
+            rootNode.list[index] = rootNode.index[parentIndex]
+            rootNode.index[parentIndex] = temp 
+            heapifyTreeInsert(rootNode, parentIndex, heapType)
 

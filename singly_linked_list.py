@@ -183,6 +183,24 @@ class SLinkedList:
         return pointer1
         
 
+# Remove Nth to last & return its head
+def removeNthFromEnd(self, head: Node, n: int) -> Node:
+        pointer1 = head
+        pointer2 = head
+        
+        for i in range(n):
+            pointer2 = pointer2.next
+        
+        if pointer2 == None:
+            return head.next
+            
+        while pointer2.next:
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next
+            
+        pointer1.next = pointer1.next.next
+        return head
+    
 
 # Partition a linked list around a value x, such that all nodes less than x come before all nodes greater than x. 
 
@@ -275,3 +293,49 @@ class SLinkedList:
             curr = next
         
         return prev # return the new head reference 
+
+
+class Solution:
+    def reverseBetween(self, head, m, n):
+        """
+        :type head: ListNode
+        :type m: int
+        :type n: int
+        :rtype: ListNode
+        """
+
+        # Empty list
+        if not head:
+            return None
+
+        # Move the two pointers until they reach the proper starting point
+        # in the list.
+        cur = head
+        prev = None
+        while m > 1:
+            prev = cur
+            cur = cur.next
+            m = m - 1
+            n = n - 1
+
+        # The two pointers that will fix the final connections.
+        tail = cur
+        con = prev
+
+        # Iteratively reverse the nodes until n becomes 0.
+        while n:
+            third = cur.next
+            cur.next = prev
+            prev = cur
+            cur = third
+            n -= 1
+
+        # Adjust the final connections as explained in the algorithm
+        if con:
+            con.next = prev
+        else:
+            head = prev
+        tail.next = cur
+        return head
+
+

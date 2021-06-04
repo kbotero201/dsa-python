@@ -29,7 +29,7 @@ def insert(rootNode, value):
                 current.right = newNode
                 return
             current = current.right
-
+         
 
 
 # Recursive solution
@@ -73,8 +73,7 @@ def search(rootNode, value):
                 return "Found"
             current = current.right
     return "Value not found"
-
-
+            
 # Recursive solution
 # O(log n) time complexity & O(log n) space complexity 
 def search(rootNode, value):
@@ -93,6 +92,8 @@ def search(rootNode, value):
                 search(rootNode.right, value)
     except:
         return "Not found"
+
+
 
 
 # Delete Node In Binary Search Tree -----------

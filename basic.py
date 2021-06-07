@@ -29,8 +29,6 @@ myList = [1,2,3,2,3,4,5,6]
 #findPairs(myList, 6)
 
 
-
-
 # def twoSum1(self, nums, target):
 # 		buffer_dictionary = {}
 # 		for i in rangenums.__len()):
@@ -65,6 +63,7 @@ def twoSum3(nums, target):
 twoSum3(myList, 6)
 
 
+# ANAGRAM
 # Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 # O(n) time complexity & O(1) space complexity 
 # all lowercase letters and no unicode characters
@@ -90,3 +89,37 @@ def isAnagram2(s, t):
         
         return True
 
+# REVERSE STRING 
+# Write a function that reverses a string. The input string is given as an array of characters s. (#344)
+# O(n) time complexity & O(1) space complexity
+def reverseString(self, s):
+        left = 0
+        right = len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+
+
+def maxProfit(self, prices: List[int]) -> int:
+	if not prices:
+		return 0
+
+	maxProfit = 0
+	minPurchase = prices[0]
+	for i in range(1, len(prices)):		
+		maxProfit = max(maxProfit, prices[i] - minPurchase)
+		minPurchase = min(minPurchase, prices[i])
+	return maxProfit
+
+
+    def maxProfit2(self, prices: List[int]) -> int:
+	if not prices:
+		return 0
+
+	maxProfit = 0
+	minPurchase = prices[0]
+	for i in range(1, len(prices)):		
+		maxProfit = max(maxProfit, prices[i] - minPurchase)
+		minPurchase = min(minPurchase, prices[i])
+	return maxProfit

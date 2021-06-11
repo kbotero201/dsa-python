@@ -30,8 +30,6 @@ def insert(rootNode, value):
                 return
             current = current.right
          
-
-
 # Recursive solution
 # O(log n) time complexity & O(log n) space complexity 
 def insertNode(rootNode, value):
@@ -51,6 +49,7 @@ def insertNode(rootNode, value):
             else:
                 insertNode(rootNode.right, value)
         return "The node has been successfully inserted"
+
 
 
 # Search In Binary Search Tree -----------

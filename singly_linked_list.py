@@ -415,3 +415,21 @@ def addBSTNode(rootNode, val):
             current = current.right
         return "Node inserted" 
         
+
+def searchBST(rootNode, val):
+    if rootNode == None:
+        return 
+    current = rootNode
+    while current: 
+        if current.val == val:
+            return "Found"
+        if val < current.val:
+            if current.left.val == val:
+                return "Found"
+            current = current.left
+        else: 
+            if current.right.val == val:
+                return "Found"
+            current = current.right
+    return "Value not found"
+                

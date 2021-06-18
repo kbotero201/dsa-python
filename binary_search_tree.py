@@ -187,3 +187,22 @@ def BFS(rootNode):
 
 
 
+# Practice
+def insert(rootNode, val):
+    if rootNode.val == None:
+        rootNode.val = val
+    newNode = Node(val)
+    current = rootNode
+    while True:
+        if current.val == val:
+            return "Duplicate"
+        if val < current.val:
+            if current.left == None:
+                current.left == newNode 
+                return "Inserted"
+            current = current.left 
+        else:
+            if current.right == None: 
+                current.right = newNode 
+                return "Inserted"
+            current = current.right 

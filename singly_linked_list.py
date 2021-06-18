@@ -433,3 +433,20 @@ def searchBST(rootNode, val):
             current = current.right
     return "Value not found"
                 
+
+
+
+# Practice 
+
+def reverse(rootNode):
+    current = rootNode 
+    prev = None
+
+    while current: 
+        next = current.next
+        current.next = prev
+        prev = current 
+        current = next 
+    return prev 
+
+

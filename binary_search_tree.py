@@ -228,4 +228,50 @@ def searchBST(rootNode, val):
 
 
 
+# Iterative 
+def insert(rootNode, val):
+    if rootNode.val == None:
+        rootNode.val == val 
+        return
+    newNode = BSTNode(val)
+    current = rootNode
+    while True: 
+        if current.val == val:
+            return "Duplicate"
+        if val < current.val:
+            if current.left == None:
+                current.left == newNode
+                return "Inserted"
+            current = current.left
+        else: 
+            if current.right == None: 
+                current.right = newNode
+                return "Inserted"
+            current = current.right  
+
+# Recursive
+def InsertR(rootNode, val):
+    if rootNode.val == val:
+        return "Duplicate"
+    else: 
+        if rootNode.val == None: 
+            rootNode.val == val
+        elif val < rootNode.val: 
+            if rootNode.left == None: 
+                rootNode.left = BSTNode(val)
+            else: 
+                InsertR(rootNode.left, val)
+        else: 
+            if rootNode.right == None:
+                rootNode.right = BSTNode(val)
+            else:
+                InsertR(rootNode.right, val)
+        return "Inserted"
+
+
+
+def search(rootNode):
+    return
+def traverse(rootNode):
+    return
 

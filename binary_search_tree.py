@@ -270,8 +270,25 @@ def InsertR(rootNode, val):
 
 
 
-def search(rootNode):
-    return
+def search(rootNode, val):
+        if rootNode.val == val:
+            return "Found"
+        current = rootNode
+        while current: 
+            if current.val == val:
+                return "Found"
+            if val < current.val:
+                if current.left.val == val:
+                    return "Found"
+                current = current.left
+            else: 
+                if current.right.val == val:
+                    return "Found"
+                current = current.right
+        return "Not Found"
+
+
+
 def traverse(rootNode):
     return
 

@@ -287,8 +287,5 @@ def search(rootNode, val):
                 current = current.right
         return "Not Found"
 
-
-
-def traverse(rootNode):
-    return
+    
 

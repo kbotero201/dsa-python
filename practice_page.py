@@ -83,4 +83,14 @@ class SLL:
                 print(current.val)
                 current = current.next
 
+    def search(self, val):
+        if self.head == None: 
+            return 
+        current = self.head
+        while current: 
+            if current.val == val:
+                return "Found"
+            current = current.next
+        return "Value not found"
+
     

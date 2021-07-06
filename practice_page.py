@@ -93,4 +93,17 @@ class SLL:
             current = current.next
         return "Value not found"
 
+    def set(self, index, val):
+        if index < 0 or self.head == None:
+            return 
+        idx = 0
+        current = self.head 
+        while current:
+            if index == idx:
+                current.val = val
+                return
+            current = current.next 
+            idx += 1
+        return "Index not found"
+
     

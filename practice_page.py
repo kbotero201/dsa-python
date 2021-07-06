@@ -106,4 +106,20 @@ class SLL:
             idx += 1
         return "Index not found"
 
-    
+    def insert(self, index, val):
+        if index < 0 or self.head == None:
+            return
+        newNode = Node(val)
+        counter = 0
+        current = self.head 
+        while current:
+            if index -1 == counter:
+                next = current.next
+                current.next = newNode
+                newNode.next = next 
+                return 
+            current = current.next
+            counter += 1
+        return "Index not found"
+
+

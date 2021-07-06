@@ -36,7 +36,7 @@ class Stack:
         else:
             return self.head 
 
-
+#Queue
 class Queue:
     def __init__(self):
         self.head = None 
@@ -67,3 +67,20 @@ class Queue:
             return
         else: 
             return self.head
+
+#SLL 
+class SLL:
+    def __init__(self):
+        self.head = None 
+        self.tail = None
+
+    def traverse(self):
+        if self.head == None:
+            return 
+        else:
+            current = self.head 
+            while current:
+                print(current.val)
+                current = current.next
+
+    

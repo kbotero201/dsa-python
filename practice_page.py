@@ -154,3 +154,20 @@ def removeNthFromEnd(self, rootNode, n):
     node1.next = node1.next.next
     return rootNode
 
+def partition(self, x):
+    current = self.head 
+    self.tail = self.head 
+
+    while current:
+        nextNode = current.next 
+        current.next = None 
+        if current.value < x:
+            current.next = self.head 
+            self.head = current
+        else: 
+            self.tail.next = current 
+            self.tail = current
+        current = nextNode 
+
+    if self.tail.next is not None:
+        self.tail.next = None  

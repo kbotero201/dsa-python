@@ -123,3 +123,19 @@ class SLL:
         return "Index not found"
 
 
+    def deleteIndex(self, index):
+        if index < 0 or self.head == None:
+            return
+        counter = 0
+        current = self.head
+        while current:
+            if counter == index -1:
+                current.next = current.next.next
+                return
+            current = current.next
+            counter += 1
+        return "Index not found"
+    
+
+
+

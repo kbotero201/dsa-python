@@ -137,5 +137,20 @@ class SLL:
         return "Index not found"
     
 
+def removeNthFromEnd(self, rootNode, n):
+    node1 = rootNode
+    node2 = rootNode
 
+    for i in range(n):
+        node2 = rootNode.next
+    
+    if node2 == None:
+        return rootNode.next
+
+    while node2.next:
+        node1 = node1.next
+        node2 = node2.next
+    
+    node1.next = node1.next.next
+    return rootNode
 

@@ -171,3 +171,14 @@ def partition(self, x):
 
     if self.tail.next is not None:
         self.tail.next = None  
+
+def reverse(self):
+    current = self.head 
+    prev = None
+
+    while current:
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next 
+    return prev 

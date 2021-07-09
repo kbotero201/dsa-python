@@ -206,4 +206,21 @@ def sumTwoLists(llA, llB):
     return ll 
         
 
-
+#BST 
+def addBSTNode(rootNode, val):
+    if rootNode.val == None:
+        rootNode.val = val 
+    newNode = Node(val)
+    current = rootNode
+    while True:
+        if current.val == val:
+            return "Dup"
+        if val < current.val:
+            if current.left == None:
+                current.left = newNode 
+            current = current.left
+        else: 
+            if current.right == None:
+                current.right = val
+            current = current.right
+        return "Node inserted" 

@@ -182,3 +182,28 @@ def reverse(self):
         prev = current
         current = next 
     return prev 
+
+def sumTwoLists(llA, llB):
+    nodeA = llA.head
+    nodeB = llB.head
+    carry = 0
+    ll = LinkedList()
+
+    while nodeA and nodeB:
+        result = 0
+        if nodeA:
+            result += nodeA.val
+            nodeA = nodeA.next
+        if nodeB:
+            result += nodeB.val
+            nodeB = nodeB.next
+        ll.add(int(result) % 10)
+        carry = result / 10 
+
+    if carry >= 1:
+        ll.add(int(carry) % 10)
+    
+    return ll 
+        
+
+

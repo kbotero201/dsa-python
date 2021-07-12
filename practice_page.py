@@ -241,3 +241,18 @@ def searchBST(rootNode, val):
                 return "Found"
             current = current.right
     return "Value not found"
+
+    #BST Breath First Search 
+    def BFS(rootNode):
+        if not rootNode:
+            return 
+        else: 
+            queue = Queue()
+            queue.enqueue(rootNode)
+            while not (queue.isEmpty()):
+                root = queue.dequeue()
+                print(root.data.value)
+                if root.data.left is not None:
+                    queue.enqueue(root.data.left)
+                if root.data.right is not None:
+                    queue.enqueue(root.data.right)

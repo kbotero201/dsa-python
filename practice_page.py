@@ -242,17 +242,36 @@ def searchBST(rootNode, val):
             current = current.right
     return "Value not found"
 
-    #BST Breath First Search 
-    def BFS(rootNode):
-        if not rootNode:
-            return 
-        else: 
-            queue = Queue()
-            queue.enqueue(rootNode)
-            while not (queue.isEmpty()):
-                root = queue.dequeue()
-                print(root.data.value)
-                if root.data.left is not None:
-                    queue.enqueue(root.data.left)
-                if root.data.right is not None:
-                    queue.enqueue(root.data.right)
+#BST Breath First Search 
+def BFS(rootNode):
+    if not rootNode:
+        return 
+    else: 
+        queue = Queue()
+        queue.enqueue(rootNode)
+        while not (queue.isEmpty()):
+            root = queue.dequeue()
+            print(root.data.value)
+            if root.data.left is not None:
+                queue.enqueue(root.data.left)
+            if root.data.right is not None:
+                queue.enqueue(root.data.right)
+
+def insert(rootNode, val):
+    if rootNode.val == None:
+        rootNode.val = val
+    newNode = Node(val)
+    current = rootNode
+    while True:
+        if current.val == val:
+            return "Duplicate"
+        if val < current.val:
+            if current.left == None:
+                current.left == newNode 
+                return "Inserted"
+            current = current.left 
+        else:
+            if current.right == None: 
+                current.right = newNode 
+                return "Inserted"
+            current = current.right 

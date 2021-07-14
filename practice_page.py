@@ -312,3 +312,21 @@ def insert(rootNode, val):
                 current.right = newNode
                 return "Inserted"
             current = current.right  
+
+def InsertR(rootNode, val):
+    if rootNode.val == val:
+        return "Duplicate"
+    else: 
+        if rootNode.val == None: 
+            rootNode.val == val
+        elif val < rootNode.val: 
+            if rootNode.left == None: 
+                rootNode.left = BSTNode(val)
+            else: 
+                InsertR(rootNode.left, val)
+        else: 
+            if rootNode.right == None:
+                rootNode.right = BSTNode(val)
+            else:
+                InsertR(rootNode.right, val)
+        return "Inserted"

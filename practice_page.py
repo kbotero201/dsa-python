@@ -292,3 +292,23 @@ def searchBST(rootNode, val):
                 searchBST(rootNode.right, val)
     except:
         return "Val not found"
+
+def insert(rootNode, val):
+    if rootNode.val == None:
+        rootNode.val == val 
+        return
+    newNode = BSTNode(val)
+    current = rootNode
+    while True: 
+        if current.val == val:
+            return "Duplicate"
+        if val < current.val:
+            if current.left == None:
+                current.left == newNode
+                return "Inserted"
+            current = current.left
+        else: 
+            if current.right == None: 
+                current.right = newNode
+                return "Inserted"
+            current = current.right  

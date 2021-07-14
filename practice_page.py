@@ -275,3 +275,20 @@ def insert(rootNode, val):
                 current.right = newNode 
                 return "Inserted"
             current = current.right 
+
+def searchBST(rootNode, val):
+    try:
+        if rootNode.val == val:
+            return "Found"
+        elif val < rootNode.left.val:
+            if rootNode.left.val == val:
+                return "Found"
+            else: 
+                searchBST(rootNode.left, val)
+        else:
+            if rootNode.right.val == val:
+                return "Found"
+            else:
+                searchBST(rootNode.right, val)
+    except:
+        return "Val not found"

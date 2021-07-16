@@ -374,3 +374,25 @@ def insertionSort(list):
             j -= 1
         list[j + 1] = key 
     print(list)
+
+
+def bucketSort(list):
+    numOfBuckets = round(math.sqrt(len(list)))
+    maxValue = max(list)
+    arr = []
+
+    for i in range(numOfBuckets):
+        arr.append([])
+    for j in list:
+        index_b = math.ceil(j* numOfBuckets/maxValue)
+        arr.[index_b -1].append(j)
+    
+    for i in range(numOfBuckets):
+        arr[i] - insertionSort(arr[i])
+    
+    k = 0
+    for i in range(numOfBuckets):
+        for j in range(len(arr[i])):
+            list[k] = arr[i][j]
+            k += 1
+    return list 

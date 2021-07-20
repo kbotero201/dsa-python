@@ -396,3 +396,11 @@ def bucketSort(list):
             list[k] = arr[i][j]
             k += 1
     return list 
+
+def mergeSort(array):
+    if len(array) <= 1:
+        return array 
+    midpoint = int(len(array)/2)
+
+    left, right = mergeSort(array[:midpoint]), mergeSort(array[midpoint:])
+    return merge(left, right)

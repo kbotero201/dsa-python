@@ -419,3 +419,15 @@ def merge(left, right):
     result.extend(left[left_pointer:])
     result.extend(right[right_pointer:])
     return result 
+
+
+# Find distinct pairs 
+def findPairs(nums, target):
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[i] == nums[j]: # for distinct pairs 
+                continue
+            elif nums[i] + nums[j] == target:
+                print(i, j)
+
+myList = [1,2,3,2,3,4,5,6]

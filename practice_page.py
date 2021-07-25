@@ -431,3 +431,13 @@ def findPairs(nums, target):
                 print(i, j)
 
 myList = [1,2,3,2,3,4,5,6]
+
+#Two Sum problem 
+def twoSum2(self, nums, target):
+        buffer = {}
+        for i, num in enumerate(nums):
+            m = target - num
+            if m in buffer:
+                return [buffer[m], i]
+            else:
+                buffer[num] = i

@@ -441,3 +441,11 @@ def twoSum2(self, nums, target):
                 return [buffer[m], i]
             else:
                 buffer[num] = i
+
+#Heap Traversals
+def levelOrderTraversal(rootNode):
+    if not rootNode:
+        return 
+    else:
+        for i in range(rootNode.heapSize):
+            print(rootNode.list[i])

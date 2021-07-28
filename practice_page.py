@@ -457,3 +457,27 @@ def insertNode(rootNode, value, heapType):
     rootNode.heapSize += 1
     heapifyTreeInsert(rootNode, rootNode.heapSize, heapType)
     return "Value Inserted"
+
+
+#Anagram 
+def isAnagram2(s, t):
+        if len(s) != len(t):
+            return False
+        dic = {}
+        for i in s:
+            if i not in dic:
+                dic[i] = 1
+            else:
+                dic[i] += 1
+        
+        for j in t:
+            if j not in dic:
+                return False
+            else:
+                dic[j] -= 1
+        
+        for val in dic.values():
+            if val != 0:
+                return False
+        
+        return True

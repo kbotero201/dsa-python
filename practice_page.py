@@ -449,3 +449,11 @@ def levelOrderTraversal(rootNode):
     else:
         for i in range(rootNode.heapSize):
             print(rootNode.list[i])
+
+def insertNode(rootNode, value, heapType):
+    if rootNode.heapSize + 1 == rootNode.maxSize:
+        return "The Binary Heap is Full"
+    rootNode.list[rootNode.heapSize + 1] = value
+    rootNode.heapSize += 1
+    heapifyTreeInsert(rootNode, rootNode.heapSize, heapType)
+    return "Value Inserted"

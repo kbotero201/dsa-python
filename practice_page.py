@@ -490,3 +490,10 @@ def reverseString(self, s):
             s[left], s[right] = s[right], s[left]
             left += 1
             right -= 1
+
+
+# Node 
+class Node:
+    def __init__(self, value):
+        self.value = value 
+        self.next = None
